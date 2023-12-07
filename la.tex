@@ -1,8 +1,8 @@
-\documentclass{beamer}
+    \documentclass{beamer}
 \usetheme{Madrid} % Theme
 
-\title{chap title}
-\author{adnan}
+\title{DÉRIVATION DES DISTRIBUTIONS et Opérations élémentaires}
+\author{}
 \date{\today}
 
 \begin{document}
@@ -17,34 +17,98 @@
 \section{Introduction}
 \begin{frame}
 \frametitle{Introduction}
-Welcome to the introduction slide!
+Dans ce chapitre on définit la dérivée au sens des distributions.
+%kml hnaa introo
 \end{frame}
 
-
-\begin{frame}
-\frametitle{haha new frame}
-welcome to beamer !!!
-\end{frame}
 
 
 \section{Content}
-\subsection{Blocks}
+\subsection{Dérivation des distributions}
 \begin{frame}
 \frametitle{Blocks}
-\begin{block}{Block Title}
-This is a block of text.
+\begin{block}{definition}
+Soit $f$ une fonction de classe $C^1$, On appelle dérivée $T'$ d'une distribution $T$ :\\
+\hspace{1cm}\hspace{1cm}\hspace{1cm}\hspace{1cm} $\forall \varphi \in \mathcal{D}, \langle T', \varphi \rangle = -\langle T, \varphi' \rangle$
 \end{block}
+\\
+\textbf{Proposition :}
+\\
+Toute distribution admet des dérivées de tout ordre qui sont aussi des distributions.
+\\
+\begin{block}{Définition :} \\
+On dit qu'une distribution $S$ est une primitive d'une distribution $T$ si et seulement si $T' = S$.
+\end{block}
+% \begin{alertblock}{Alert Block}
+% This is an alert block.
+% \end{alertblock}
 
-\begin{alertblock}{Alert Block}
-This is an alert block.
-\end{alertblock}
+% \begin{exampleblock}{Example Block}
+% This is an example block.
+% \end{exampleblock}
 
-\begin{exampleblock}{Example Block}
-This is an example block.
-\end{exampleblock}
 \end{frame}
 
-\subsection{Lists}
+\begin{frame}
+
+\textbf{Exemples : Dérivée de la fonction d'Heaviside}
+
+\vspace{0.5cm} % Adjust the space as needed
+
+La fonction d'Heaviside (dite échelon unité) est définie par :
+
+\vspace{0.3cm} % Adjust the space as needed
+
+\hspace{2cm} $H(x) = \begin{cases}
+\hspace{2cm} 0 & \text{si } x < 0 \\
+\hspace{2cm} 1 & \text{si } x > 0
+\end{cases}$
+\vspace{0.5cm} % Adjust the space as needed
+
+
+\\
+Au sens des fonctions, la dérivée de $H(x)$ n'existe pas au point $x = 0$. Mais au sens des distributions, on a pour $\varphi \in \mathcal{D}$
+
+\vspace{0.3cm} 
+\\
+
+\langle H', \varphi \rangle &= - \langle H, \varphi' \rangle \\
+\vspace{0.3cm} 
+\hspace{1cm} = -\int_{-\infty}^{+\infty} H(x) \varphi'(x) \, dx
+\\
+\vspace{0.3cm} 
+\hspace{1cm} = -\int_{-\infty}^{0} H(x) \varphi'(x) \, dx - \int_{0}^{+\infty} H(x) \varphi'(x) \, dx
+\\ 
+\vspace{0.3cm} 
+\hspace{1cm} = -\int_{0}^{+\infty} \varphi'(x) \, dx = \varphi'(0) = \langle \delta, \varphi \rangle
+\vspace{0.5cm} 
+
+\text{d'où } H' = \delta
+
+\\
+\vspace{0.3cm} 
+\end{frame}
+\begin{frame}
+
+\textbf{Extension au cas de plusieurs variables }
+\\
+\text{Dans le cas de plusieurs variables, on définit la dérivée } \dfrac{\partial T}{\partial x_i}\\\text{ d'une distribution } T, par :
+\vspace{0.3cm} 
+\\
+\hspace{2cm} \langle \dfrac{\partial T}{\partial x_i}, \varphi \rangle = -\langle T, \dfrac{\partial \varphi}{\partial x_i} \rangle , \hspace {0.7cm} i = 1, 2, ..., m.
+\\
+Plus généralement, on a :
+\\ 
+\vspace{0.3cm} 
+\hspace{2cm} \langle D^k, \varphi \rangle = (-1)^{\left| k \right|} \langle T, D^k\varphi \rangle
+ 
+
+\end{frame}
+
+
+
+
+\subsection{Opérations élémentaires}
 \begin{frame}
 \frametitle{Lists}
 \begin{itemize}
