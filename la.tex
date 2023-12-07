@@ -112,8 +112,27 @@ où k = (k_1, k_2, ..., k_m) \in \mathbb{N}^m  avec \left| k \right| = k_1+k_2+.
 \end{frame}
 
 \begin{frame}
-\textbf{Exemples : Dérivée de la fonction d'Heaviside}
-    
+\textbf{Exemples :}
+    Soient \( H(x) \) la fonction d'Heaviside, \( \alpha \)  une constante réelle. Prouver, au sens des distributions, la relation suivante :
+\\
+\vspace{0.3cm} 
+  \hspace{2cm}\left(\frac{d}{dx} - \alpha\right) H(x) e^{\alpha x} = \delta
+\vspace{0.3cm} 
+\\
+  \textbf{Solution :}
+Soit \( \alpha \in \mathcal{D} \). On a 
+\\
+\vspace{0.3cm} 
+\langle  \left(\frac{d}{dx} - \alpha\right) H(x) e^{\alpha x}, \varphi \rangle = \langle  \frac{d}{dx} H(x) e^{\alpha x} , \varphi \rangle - \alpha 
+ \langle H(x) e^{\alpha x}, \varphi \rangle
+ \\
+\vspace{0.3cm} 
+\hspace{2cm} = - \langle  H(x) e^{\alpha x} , \varphi' \rangle - \alpha  \langle H(x) e^{\alpha x}, \varphi \rangle
+\\
+\vspace{0.3cm} 
+\hspace{2cm} = -\int_{-\infty}^{+\infty} H(x) e^{\alpha x} \varphi'(x) dx - \alpha \int_{-\infty}^{+\infty} H(x) e^{\alpha x} \varphi(x) dx 
+
+
 \end{frame}
 
 
