@@ -117,23 +117,93 @@ où k = (k_1, k_2, ..., k_m) \in \mathbb{N}^m  avec \left| k \right| = k_1+k_2+.
 \\
 \vspace{0.3cm} 
   \hspace{2cm}\left(\frac{d}{dx} - \alpha\right) H(x) e^{\alpha x} = \delta
-\vspace{0.3cm} 
+\vspace{0.3cm} Ω
 \\
   \textbf{Solution :}
-Soit \( \alpha \in \mathcal{D} \). On a 
-\\
-\vspace{0.3cm} 
-\langle  \left(\frac{d}{dx} - \alpha\right) H(x) e^{\alpha x}, \varphi \rangle = \langle  \frac{d}{dx} H(x) e^{\alpha x} , \varphi \rangle - \alpha 
- \langle H(x) e^{\alpha x}, \varphi \rangle
- \\
-\vspace{0.3cm} 
-\hspace{2cm} = - \langle  H(x) e^{\alpha x} , \varphi' \rangle - \alpha  \langle H(x) e^{\alpha x}, \varphi \rangle
-\\
-\vspace{0.3cm} 
-\hspace{2cm} = -\int_{-\infty}^{+\infty} H(x) e^{\alpha x} \varphi'(x) dx - \alpha \int_{-\infty}^{+\infty} H(x) e^{\alpha x} \varphi(x) dx 
+L'énoncé initial est :
 
+\[ \left(\frac{d}{dx} - \alpha\right) H(x) e^{\alpha x} = \delta(x) \]
+
+Nous allons utiliser l'intégration par parties pour prouver cette égalité.
+
+\\
+\begin{align*}
+&\int_{-\infty}^{\infty} \left(\frac{d}{dx} - \alpha\right) H(x) e^{\alpha x} \phi(x) \,dx = \int_{-\infty}^{\infty} \delta(x) \phi(x) \,dx = \phi(0)
+\end{align*}
+\\
+\end{frame}
+\begin{frame}
+
+Commençons par calculer le côté gauche :
+
+\\
+\begin{align*}
+&\int_{-\infty}^{\infty} \left(\frac{d}{dx} - \alpha\right) H(x) e^{\alpha x} \phi(x) \,dx \\
+&= \int_{-\infty}^{\infty} \frac{d}{dx}\left(H(x) e^{\alpha x}\right) \phi(x) \,dx - \alpha \int_{-\infty}^{\infty} H(x) e^{\alpha x} \phi(x) \,dx
+\end{align*}
+\\
+
+
+En utilisant \(H'(x) = \delta(x)\) :
+% \begin{frame}
+% \end{frame}
+\\
+
+\begin{align*}
+&\int_{-\infty}^{\infty} \frac{d}{dx}\left(H(x) e^{\alpha x}\right) \phi(x) \,dx \\
+&= \int_{-\infty}^{\infty} \delta(x) e^{\alpha x} \phi(x) \,dx + \alpha \int_{-\infty}^{\infty} H(x) e^{\alpha x} \phi(x) \,dx
+\end{align*}```
+
+En simplifiant :
+\end{frame}
+\begin{frame}
+\begin{align*}
+&\alpha \int_{-\infty}^{\infty} H(x) e^{\alpha x} \phi(x) \,dx = \phi(0) \\
+&\int_{-\infty}^{\infty} H(x) e^{\alpha x} \phi(x) \,dx = \frac{1}{\alpha}\phi(0) \\
+&\int_{-\infty}^{\infty} \delta(x) \phi(x) \,dx = \phi(0)
+\end{align*}
+\\
+
+Par conséquent, nous avons montré que \( \left(\frac{d}{dx} - \alpha\right) H(x) e^{\alpha x} = \delta(x) \) en termes de distributions en utilisant l'intégration par parties.
+
+\\
+ou d'une autre facon :
+\\
+\\
+\vspace{0.3cm} 
+  \hspace{2cm}\left(\frac{d}{dx} - \alpha\right) H(x) e^{\alpha x} = \frac{d}{dx} \left(H(x) e^{\alpha x}\right) - \alpha H(x) e^{\alpha x}
+
+\\
+\vspace{0.3cm} 
+% \begin{align*}
+
+ En utilisant cette expression, reprenons l'équation initiale : 
+ \\
+ \vspace{0.3cm}
+ \hspace{2cm} \dfrac{d}{dx} \left(H(x) e^{\alpha x}\right) = \delta(x) e^{\alpha x} + H(x) \alpha e^{\alpha x}
+\\
+\vspace{0.3cm}
+
+% \end{align*}
 
 \end{frame}
+
+\begin{frame}
+Ainsi, après réarrangement, on obtient effectivement :
+
+\vspace{0.3cm} 
+\hspace{2cm} $\left(\frac{d}{dx} - \alpha\right) H(x) e^{\alpha x} = \delta(x) e^{\alpha x} + \alpha H(x) e^{\alpha x} - \alpha H(x) e^{\alpha x}$
+\vspace{0.3cm} 
+\hspace{2cm} $\left(\frac{d}{dx} - \alpha\right) H(x) e^{\alpha x} = \delta(x) e^{\alpha x}$
+\vspace{0.3cm}
+
+La présence de $e^{\alpha x}$ ne change pas la nature de la distribution de Dirac, donc on peut simplifier $\delta(x) e^{\alpha x}$ en $\delta(x)$.
+\\
+\\\
+donc, la relation au sens des distributions est bien établie.
+\end{frame}
+
+
 
 
 \subsection{Opérations élémentaires}
