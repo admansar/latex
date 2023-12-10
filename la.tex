@@ -14,17 +14,17 @@
 \tableofcontents % Table of contents slide
 \end{frame}
 
-\section{Introduction}
-\begin{frame}
-\frametitle{Introduction}
-Dans ce chapitre on définit la dérivée au sens des distributions.
-%kml hnaa introo
-\end{frame}
+% \section{Introduction}
+% \begin{frame}
+% \frametitle{Introduction}
+% Dans ce chapitre on définit la dérivée au sens des distributions.
+% %kml hnaa introo
+% \end{frame}
 
 
 
-\section{Content}
-\subsection{Dérivation des distributions}
+% \section{Content}
+\section{Dérivation des distributions}
 \begin{frame}
 \frametitle{Dérivation des distributions}
 \begin{block}{definition}
@@ -206,7 +206,7 @@ donc, la relation au sens des distributions est bien établie.
 
 
 
-\subsection{Opérations élémentaires}
+\section{Opérations élémentaires}
 \begin{frame}
 \frametitle{Opérations élémentaires}
 % \frametitle{Lists}
@@ -263,23 +263,69 @@ Les solutions de \( xT = 0 \) dans \( \mathcal{D}' \) sont les distributions \( 
 \begin{frame}
 \begin{block}{définition :}
 
-Soit \( f(x) \) une fonction localement sommable et \( f \) la distribution qui lui est associée. La distribution associée à \( f(x - a) \), où \( a \) est une constante, est définie comme la translation de la distribution \( f \) par \( a \). On la note souvent \( T_a(f) \) ou \( f(\cdot - a) \).
+Soit \( f(x) \) une fonction localement sommable et \( f \) la distribution qui lui est associée. La distribution associée à \( f(x - a) \), où \( a \) est une constante, est définie comme la translation de la distribution \( f \) par \( a \). On la note souvent \( T_a(f) \).
 
 La translation d'une distribution \( f \) par \( a \) agit sur une fonction test \( \varphi(x) \) comme suit :
 
-\[ \langle T_a(f), \varphi(x) \rangle = \langle f(x - a), \varphi(x) \rangle \]
-
-Cela signifie que pour toute fonction test \( \varphi(x) \), la distribution \( T_a(f) \) évalue \( \varphi(x) \) en \( x - a \), c'est-à-dire que la distribution \( T_a(f) \) est essentiellement la même que la distribution \( f \), mais décalée spatialement de \( a \) unités vers la droite si \( a > 0 \) ou vers la gauche si \( a < 0 \).
+\[ \langle T_a(f), \varphi(x) \rangle = \langle f(x - a), \varphi(x) \rangle = \langle f(x), \varphi(x + a) \rangle \]
 
 \end{block}
 
+\textbf{Exemple :}
+    Considérons la distribution de Dirac \( \delta(x) \) et regardons comment la distribution \( \delta(x - a) \) agit sur une fonction test \( \varphi(x) \). La distribution \( \delta(x - a) \) représente une translation de la distribution de Dirac de \( a \) unités vers la droite.
+
+La façon dont cette distribution agit sur une fonction test \( \varphi(x) \) est définie par :
+
+\[ \langle \delta(x - a), \varphi(x) \rangle = \varphi(a) \]
 
 \end{frame}
-
-\section{Conclusion}
 \begin{frame}
-\frametitle{Conclusion}
-Thank you for your attention!
+
+\begin{definition}
+Une distribution \( T \) est dite périodique de période \( a \) si elle satisfait la propriété suivante pour toute fonction test \( \varphi(x) \) :
+
+\[ \langle T(x), \varphi(x) \rangle = \langle T(x), \varphi(x + a) \rangle  = \langle T(x - a), \varphi(x) \rangle\]
+ou encore :
+\[ \langle T(x), \varphi(x + a) - \varphi(x) \rangle = 0 \]
+
+\end{definition}
+
 \end{frame}
+\begin{frame}
+
+
+\begin{block}{Définition du Changement d'échelle :}
+
+\text{Soit } T \text{ une distribution. Le changement d'échelle est défini comme suit :}
+
+\vspace{0.2cm}\hspace{2.5cm} \forall a \neq 0, \quad \langle T, \varphi(ax) \rangle = \frac{1}{|a|} \langle T, \varphi\left(\frac{x}{a}\right) \rangle
+\end{block}
+\\\\\\
+\end{frame}
+
+
+\begin{frame}
+\begin{definition}
+La transposée \( \check{T} \) d'une distribution \( T \) est définie par la relation suivante pour toute fonction test \( \varphi \) :
+
+\[ \langle \check{T}, \varphi \rangle = \langle T, \check{\varphi} \rangle  \hspace{1cm} \forall \varphi \in \mathcal{D} \]
+
+Une distribution T est dite paire si \( \check{T}  = T \), c'est-à-dire :
+\[ \langle \check{T}, \varphi \rangle = \langle T, \varphi \rangle  \hspace{1cm} \forall \varphi \in \mathcal{D} \]
+et elle est dite impaire si \( \check{T}  = -T \), c'est-à-dire  :
+\[ \langle \check{T}, \varphi \rangle = -\langle T, \varphi \rangle  \hspace{1cm} \forall \varphi \in \mathcal{D} \]
+
+\end{definition}
+
+
+\end{frame}
+
+% \section{Conclusion}
+% \begin{frame}
+% \frametitle{Conclusion}
+% Thank you for your attention!
+\begin{frame}
+\[\textbf{merci pour votre attention !}\]
+\end{frame}   
 
 \end{document}
