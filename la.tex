@@ -26,7 +26,7 @@ Dans ce chapitre on définit la dérivée au sens des distributions.
 \section{Content}
 \subsection{Dérivation des distributions}
 \begin{frame}
-\frametitle{Blocks}
+\frametitle{Dérivation des distributions}
 \begin{block}{definition}
 Soit $f$ une fonction de classe $C^1$, On appelle dérivée $T'$ d'une distribution $T$ :\\
 \hspace{1cm}\hspace{1cm}\hspace{1cm}\hspace{1cm} $\forall \varphi \in \mathcal{D}, \langle T', \varphi \rangle = -\langle T, \varphi' \rangle$
@@ -208,18 +208,72 @@ donc, la relation au sens des distributions est bien établie.
 
 \subsection{Opérations élémentaires}
 \begin{frame}
-\frametitle{Lists}
-\begin{itemize}
-    \item Item 1
-    \item Item 2
-    \item Item 3
-\end{itemize}
+\frametitle{Opérations élémentaires}
+% \frametitle{Lists}
+% \begin{itemize}
+%     \item Item 1
+%     \item Item 2
+%     \item Item 3
+% \end{itemize}
 
-\begin{enumerate}
-    \item First
-    \item Second
-    \item Third
-\end{enumerate}
+% \begin{enumerate}
+%     \item First
+%     \item Second
+%     \item Third
+% \end{enumerate}
+\begin{block}{definition}
+Le produit d'une distribution quelconque \( T \) par une fonction \( g \) de classe \( C^{\infty} \) est défini par :
+
+\[
+\langle T \cdot g, \varphi \rangle = \langle T, g \cdot \varphi \rangle
+\]
+
+où \( \langle T, \varphi \rangle \) est l'action de la distribution \( T \) sur la fonction test \( \varphi \), et \( g \cdot \varphi \) est le produit de la fonction \( g \) par la fonction test \( \varphi \).
+
+\end{block}
+\\
+\textbf{Exemple :}
+Considérons la distribution de Dirac \( \delta(x) \) et une fonction \( g(x) \) quelconque, par exemple \( g(x) = x^2 \), qui est de classe \( C^{\infty} \) sur son domaine.
+
+La définition du produit de \( \delta(x) \) par \( g(x) \) est donnée par :
+
+\[
+\langle \delta(x) \cdot g(x), \varphi(x) \rangle = \langle \delta(x), g(x) \cdot \varphi(x) \rangle
+\]
+\end{frame}
+\begin{frame}
+Pour une fonction test \( \varphi(x) \), cette équation se traduit par :
+
+\[
+\langle \delta(x) \cdot x^2, \varphi(x) \rangle = \langle \delta(x), x^2 \cdot \varphi(x) \rangle
+\]
+
+En utilisant les propriétés de la distribution de Dirac, on sait que \( \langle \delta(x), x^2 \cdot \varphi(x) \rangle = (g.\varphi)(0) = 0 \) pour toute fonction test \( \varphi(x) \), car \( x^2 \cdot \varphi(x) \) s'annule en \( x = 0 \).
+
+Ainsi, le produit de la distribution de Dirac \( \delta(x) \) par la fonction \( g(x) = x^2 \) est égal à la distribution nulle. Cet exemple montre comment le produit d'une distribution par une fonction de classe \( C^{\infty} \) est défini et comment il peut être évalué dans certains cas.
+\end{frame}
+\begin{frame}
+\begin{block}{proposition :}
+Les solutions de \( xT = 0 \) dans \( \mathcal{D}' \) sont les distributions \( T = c\delta \) où \( c \in \mathbb{C} \).
+\textbf{en générale}, La solution de l'équation \( xT = S \), où \( S \) est une distribution donnée, est égale à la somme d'une solution particulière \( T_0 \) de cette équation et de la solution générale de l'équation homogène. On en déduit de la proposition précédente que cette solution s'écrit sous la forme : \( T = c \delta + T_0 \), où \( c \in \mathbb{C} \). En effet, si \( T \) et \( T_0 \) sont des solutions de \( xT = S \), alors \( x(T-T_0) = 0 \), d'où \( T-T_0 = c\delta \), \( c \in \mathbb{C} \).
+
+\end{block}
+
+\end{frame}
+\begin{frame}
+\begin{block}{définition :}
+
+Soit \( f(x) \) une fonction localement sommable et \( f \) la distribution qui lui est associée. La distribution associée à \( f(x - a) \), où \( a \) est une constante, est définie comme la translation de la distribution \( f \) par \( a \). On la note souvent \( T_a(f) \) ou \( f(\cdot - a) \).
+
+La translation d'une distribution \( f \) par \( a \) agit sur une fonction test \( \varphi(x) \) comme suit :
+
+\[ \langle T_a(f), \varphi(x) \rangle = \langle f(x - a), \varphi(x) \rangle \]
+
+Cela signifie que pour toute fonction test \( \varphi(x) \), la distribution \( T_a(f) \) évalue \( \varphi(x) \) en \( x - a \), c'est-à-dire que la distribution \( T_a(f) \) est essentiellement la même que la distribution \( f \), mais décalée spatialement de \( a \) unités vers la droite si \( a > 0 \) ou vers la gauche si \( a < 0 \).
+
+\end{block}
+
+
 \end{frame}
 
 \section{Conclusion}
